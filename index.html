@@ -30,18 +30,15 @@
           </div>  
 		            
           <div class="row">
-            <div id="status" class="col-xs-6">
+            <div id="Organization" class="col-xs-6">
               <h4>Status (What)</h4>
             </div>
-            <div id="sector" class="col-xs-6">
-              <h4>Sector (What)</h4>
+            <div id="Beneficiaries" class="col-xs-6">
+              <h4>Beneficiaries</h4>
             </div>
           </div>
           <div class="row">
-            <div id="orgs" class="col-lg-12">
-              <h4>Top Ten District</h4>
-              <div class="col-xs-12">By CBO count</div>
-           </div>
+            
           </div>
         </div>
         <div id="map" class="col-lg-8">
@@ -84,13 +81,17 @@
         }
         $('#dashboard').hide();
         $('#map').hide();
-        var sector_chart = dc.pieChart("#sector");
-        var status_chart = dc.pieChart("#status");
+		
+        var Benefi_chart = dc.pieChart("#Beneficiaries");
+        var ORG_chart = dc.pieChart("#Organization");
+		
         var map_chart = dc.geoChoroplethChart("#map");
-        var org_chart = dc.rowChart("#orgs");
+		
+  
+		
         var map2_chart = dc.geoChoroplethChart("#map2");
         
-        d3.csv("data/3W_Data.csv", function(csv_data){
+        d3.csv("data/raha_data.csv", function(csv_data){
             var cf = crossfilter(csv_data);
             
             cf.sector = cf.dimension(function(d) { return d.SctrCluster; });
@@ -148,7 +149,7 @@
 		.dimension(cf)
 		.group(all);
                             
-            d3.json("data/Phil_provinces.geojson", function (provincesJSON) {
+            d3.json("data/Pakl_districs.geojson", function (provincesJSON) {
                 
                 map_chart.width(660).height(600)
                     .dimension(cf.pcode)
@@ -170,7 +171,7 @@
                         return "Province: " + pcode2prov[d.key];
                     });
                     
-                    d3.json("data/Phil_municipalities.geojson", function (municJSON){
+                    d3.json("data/Pakl_tehsil.geojson", function (municJSON){
                         map2_chart.width(660).height(600)
                             .dimension(cf.mcode)
                             .group(mcode)
