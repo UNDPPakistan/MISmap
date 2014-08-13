@@ -1,0 +1,38 @@
+Province,District,Tehsil,Total Expenditure,Male Beneficiaries,Female Beneficiaries,Local Beneficiaries,Afghan Beneficiaries,CO formed,VO formed,LSO formed
+Balochistan                   ,Chaghi,Chagai,20000,100,75,125,50,40,8,2
+Balochistan                   ,Chaghi,Dalbandin,18000,89,65,97,23,38,6,1
+Balochistan                   ,Chaghi,Taftan,27000,150,80,200,40,52,11,4
+Balochistan                   ,Killa Abdullah,Chaman,30000,170,70,198,76,43,4,1
+Balochistan                   ,Killa Abdullah,Killa Abdullah,35000,173,68,165,43,51,13,3
+Balochistan                   ,Killa Saifullah,Loi Band,33000,210,65,212,78,47,7,1
+Balochistan                   ,Killa Saifullah,Killa Saifullah,23000,143,45,167,63,31,3,1
+Balochistan                   ,Killa Saifullah,Kan Mehtarzai,41000,100,75,125,50,40,8,2
+Balochistan                   ,Killa Saifullah,Badinai,38000,89,65,97,23,38,6,1
+Balochistan                   ,Killa Saifullah,Shinkai,34500,150,80,200,40,52,11,4
+Balochistan                   ,Killa Saifullah,Muslim Bagh,29000,170,70,198,76,43,4,1
+Balochistan                   ,Loralai,Loralai,42000,173,68,165,43,51,13,3
+Balochistan                   ,Loralai,Duki,44000,210,65,212,78,47,7,1
+Balochistan                   ,Pishin,Karezat,37500,143,45,167,63,31,3,1
+Balochistan                   ,Pishin,Barshore,34000,100,75,125,50,40,8,2
+Balochistan                   ,Pishin,Pishin,31000,89,65,97,23,38,6,1
+Balochistan                   ,Quetta,Quetta City,45000,150,80,200,40,52,11,4
+Balochistan                   ,Quetta,Panjpai,49000,170,70,198,76,43,4,1
+FATA                          ,Khyber Agency,Landi Kotal,39000,173,68,165,43,51,13,3
+FATA                          ,Khyber Agency,Jamrud,35000,210,65,212,78,47,7,1
+FATA                          ,Khyber Agency,Bara,40000,143,45,167,63,31,3,1
+KPK                           ,Buner,Chagharzai,49000,100,75,125,50,40,8,2
+KPK                           ,Buner,Totalai,41000,89,65,97,23,38,6,1
+KPK                           ,Buner,Chamla,45000,150,80,200,40,52,11,4
+KPK                           ,Buner,Daggar,51200,170,70,198,76,43,4,1
+KPK                           ,Buner,Gagra,49500,173,68,165,43,51,13,3
+KPK                           ,Buner,Pir Baba/ Gadaizi,44000,210,65,212,78,47,7,1
+KPK                           ,Haripur,Ghazi,55000,143,45,167,63,31,3,1
+KPK                           ,Haripur,Haripur,59000,100,75,125,50,40,8,2
+KPK                           ,Lower Dir,Samar Bagh,46000,89,65,97,23,38,6,1
+KPK                           ,Lower Dir,Timergara,41000,150,80,200,40,52,11,4
+KPK                           ,Nowshera,Nowshera,66000,170,70,198,76,43,4,1
+KPK                           ,Nowshera,Pabbi,71000,173,68,165,43,51,13,3
+KPK                           ,Peshawar,Peshawar,95000,210,65,212,78,47,7,1
+KPK                           ,Swabi,Lahor,71000,143,45,167,63,31,3,1
+KPK                           ,Swabi,Swabi,66000,100,75,125,50,40,8,2
+KPK                           ,Swabi,Topi,61000,89,65,97,23,38,6,1
