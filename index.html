@@ -29,13 +29,7 @@
             </div>
           </div>  
 		            
-          <div class="row">
-            <div id="Organization" class="col-xs-6">
-              <h4>Status (What)</h4>
-            </div>
-            <div id="Beneficiaries" class="col-xs-6">
-              <h4>Beneficiaries</h4>
-            </div>
+         
           </div>
           <div class="row">
             
@@ -82,72 +76,15 @@
         $('#dashboard').hide();
         $('#map').hide();
 		
-        var Benefi_chart = dc.pieChart("#Beneficiaries");
-        var ORG_chart = dc.pieChart("#Organization");
-		
+        	
         var map_chart = dc.geoChoroplethChart("#map");
 		
   
 		
         var map2_chart = dc.geoChoroplethChart("#map2");
         
-        d3.csv("data/raha_data.csv", function(csv_data){
-            var cf = crossfilter(csv_data);
+        
             
-            cf.sector = cf.dimension(function(d) { return d.SctrCluster; });
-            cf.status = cf.dimension(function(d) { return d.Status; });
-            cf.pcode = cf.dimension(function(d) { return d.ProvinceCODE; });
-            cf.organisation = cf.dimension(function(d) { return d.Organisation; });
-            cf.mcode = cf.dimension(function(d) { return d.MCODE; });
-            
-            var sector = cf.sector.group();
-            var status = cf.status.group();
-            var pcode = cf.pcode.group();
-            var organisation = cf.organisation.group();
-            var all = cf.groupAll();
-            var mcode = cf.mcode.group();
-            
-            sector_chart.width(180).height(180)
-                .dimension(cf.sector)
-                .group(sector)
-                .innerRadius(10)
-                .colors(['#fd8d3c',
-                        '#fc4e2a',
-                        '#e31a1c',
-                        '#bd0026',
-                        '#800026',
-                        '#807dba',
-                        '#6a51a3',
-                        '#54278f',
-                        '#3f007d'])
-                .colorDomain([0,8])
-                .colorAccessor(function(d, i){return i%9;});
-            
-            status_chart.width(180).height(180)
-                .dimension(cf.status)
-                .group(status)
-                .innerRadius(10)
-                .colors(['#2ca25f',                                   
-                        '#3182bd',
-                        '#ffeda0'                                                                                                         
-                        ])
-                .colorDomain([0,3])
-                .colorAccessor(function(d, i){return i%4;});
-            
-            org_chart.width(320).height(300)
-                .dimension(cf.organisation)
-                .group(organisation)
-                .elasticX(true)
-                .data(function(group) {
-                    return group.top(10);
-                })
-                .colors(['#3182bd'])
-                .colorDomain([0,0])
-                .colorAccessor(function(d, i){return 1;});
-                
-            dc.dataCount("#count-info")
-		.dimension(cf)
-		.group(all);
                             
             d3.json("data/Pakl_districs.geojson", function (provincesJSON) {
                 
@@ -187,7 +124,7 @@
                             .overlayGeoJson(municJSON.features, "Municipalities", function (d) {
                                 return d.properties.MUN_P_STR;
                             })
-                            .projection(d3.geo.mercator().center([124.5,12]).scale(4500))
+                            .projection(d3.geo.mercator().center([70,32]).scale(5000))
                             .title(function (d) {
                                 return "Municipality: " + mcode2mun[d.key];
                             });
