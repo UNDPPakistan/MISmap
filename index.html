@@ -130,7 +130,7 @@ pieChartO.dimension(categoryDimO).group(valueSumGroupO).radius(60)
                     .overlayGeoJson(districsJSON.features, "District", function (d) {
                         return d.properties.DISTRICT_C;
                     })
-                    .projection(d3.geo.mercator().center([124.5,12]).scale(4500))
+                    .projection(d3.geo.mercator().center([74.75,33.5]).scale(4500))
                     .title(function (d) {
                         return "District: " + pcode2prov[d.key];
                     });
@@ -151,7 +151,7 @@ pieChartO.dimension(categoryDimO).group(valueSumGroupO).radius(60)
                             .overlayGeoJson(tehsilJSON.features, "Tehsils", function (d) {
                                 return d.properties.TEHSIL_C;
                             })
-                            .projection(d3.geo.mercator().center([124.5,12]).scale(4500))
+                            .projection(d3.geo.mercator().center([74.75,33.5]).scale(4500))
                             .title(function (d) {
                                 return "Tehsils: " + tcode2mun[d.key];
                             });
