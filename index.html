@@ -61,25 +61,37 @@
         $('#map').hide();
 		
 		
-      
-        var map_chart = dc.geoChoroplethChart("#map");
+              var map_chart = dc.geoChoroplethChart("#map");
         var map2_chart = dc.geoChoroplethChart("#map2");
 
   d3.csv("data/raha_data.csv", function(csv_data){
             var cvsdata = crossfilter(csv_data);
-			
+	var exp1 = [
+    { Local_Beneficiaries: 167, Afghan_Beneficiaries: 63},
+    { Local_Beneficiaries: 212, Afghan_Beneficiaries: 78},
+    { Local_Beneficiaries: 165, Afghan_Beneficiaries: 43},
+    { Local_Beneficiaries: 300, Afghan_Beneficiaries: 100},
+    { Local_Beneficiaries: 270, Afghan_Beneficiaries: 300},
+
+];
+  
+  
+var exp2 = [
+    { CO_formed: 25,VO_formed:65,LSO_ormed:45},
+     { CO_formed: 32,VO_formed:54,LSO_ormed:30},
+    { CO_formed: 42,VO_formed:54,LSO_ormed:20},		
 
 
 // Reshape the data 
 var cfB = new Array();
-cvsdata.forEach(function (expB) {
+exp1.forEach(function (expB) {
     cfB.push({ Category: "Local", Value: expB.Local_Beneficiaries });
     cfB.push({ Category: "Afghan", Value: expB.Afghan_Beneficiaries });
    
 });
 
 var cfO = new Array();
-cvsdata.forEach(function (expO) {
+exp2.forEach(function (expO) {
     cfO.push({ Category: "COs", Value: expO.CO_formed });
     cfO.push({ Category: "VOs", Value: expO.VO_formed });
     cfO.push({ Category: "LSOs", Value: expO.LSO_ormed });
