@@ -78,100 +78,40 @@
 var exp2 = [
     { CO_formed: 25,VO_formed:65,LSO_ormed:45},
      { CO_formed: 32,VO_formed:54,LSO_ormed:30},
-    { CO_formed: 42,VO_formed:54,LSO_ormed:20},		
+    { CO_formed: 42,VO_formed:54,LSO_ormed:20},
 
-
+];
 // Reshape the data 
 var cfB = new Array();
-exp1.forEach(function (expB) {
-    cfB.push({ Category: "Local", Value: expB.Local_Beneficiaries });
-    cfB.push({ Category: "Afghan", Value: expB.Afghan_Beneficiaries });
+exp1.forEach(function (exp) {
+   cfB.push({ Category: "Local", Value: exp.Local_Beneficiaries });
+   cfB.push({ Category: "Afghan", Value: exp.Afghan_Beneficiaries });
    
 });
-
 var cfO = new Array();
 exp2.forEach(function (expO) {
     cfO.push({ Category: "COs", Value: expO.CO_formed });
     cfO.push({ Category: "VOs", Value: expO.VO_formed });
     cfO.push({ Category: "LSOs", Value: expO.LSO_ormed });
 });
+
 // Setup crossfilter
+ndxB = crossfilter(cfB);
+categoryDim = ndxB.dimension(function (d) { return d.Category; });
+valueSumGroup = categoryDim.group().reduceSum(function (d) { return d.Value; });
 
-var ndxB = crossfilter(cfB);
-var categoryDim = ndxB.dimension(function (d) { return d.Category; });
-var valueSumGroup = categoryDim.group().reduceSum(function (d) { return d.Value; });
+ndxO = crossfilter(cfO);
+categoryDimO = ndxO.dimension(function (d) { return d.Category; });
+valueSumGroupO = categoryDimO
+.group()
+.reduceSum(function (d) { return d.Value; });
 
-var ndxO = crossfilter(cfO);
-var categoryDimO = ndxO.dimension(function (d) { return d.Category; });
-var valueSumGroupO = categoryDimO.group().reduceSum(function (d) { return d.Value; });
-
- var cf.tcode = cf.dimension(function(d) { return d.TEHSIL_C; });
-		 var tcode = cf.tcode.group();
-		  
-		 var cf.pcode = cf.dimension(function(d) { return d.DISTRICT_C; });
-		 var pcode = cf.pcode.group();     
-          var all = cf.groupAll();
 // Create the chart
-
-
 var pieChartB = dc.pieChart("#Benefi");
 pieChartB.dimension(categoryDim).group(valueSumGroup).radius(60)
 ;
 var pieChartO = dc.pieChart("#Organi");
 pieChartO.dimension(categoryDimO).group(valueSumGroupO).radius(60)
 ;
-.group(all);
-                            
-            d3.json("data/Pakl_districs.geojson", function (districsJSON) {
-                
-                map_chart.width(660).height(600)
-                    .dimension(cf.pcode)
-                    .group(pcode)
-                    .colors(['#AAAAAA', '#CB181D'])
-                    .colorDomain([0, 1])
-                    .colorAccessor(function (d) {
-                        if(d>0){
-                            return 1;
-                        } else {
-                            return 0;
-                        }
-                    })
-                    .overlayGeoJson(districsJSON.features, "District", function (d) {
-                        return d.properties.DISTRICT_C;
-                    })
-                    .projection(d3.geo.mercator().center([74.75,33.5]).scale(4500))
-                    .title(function (d) {
-                        return "District: " + pcode2prov[d.key];
-                    });
-                    
-                    d3.json("data/Pakl_tehsil.geojson", function (tehsilJSON){
-                        map2_chart.width(660).height(600)
-                            .dimension(cf.tcode)
-                            .group(tcode)
-                            .colors(['#AAAAAA', '#CB181D'])
-                            .colorDomain([0, 1])
-                            .colorAccessor(function (d) {
-                                if(d>0){
-                                    return 1;
-                                } else {
-                                    return 0;
-                                }
-                            })
-                            .overlayGeoJson(tehsilJSON.features, "Tehsils", function (d) {
-                                return d.properties.TEHSIL_C;
-                            })
-                            .projection(d3.geo.mercator().center([74.75,33.5]).scale(4500))
-                            .title(function (d) {
-                                return "Tehsils: " + tcode2mun[d.key];
-                            });
-                            $('#loading').hide();
-                            $('#dashboard').show();
-                            dc.renderAll();
-                            
-                    });                    
-                });            
-        });
-    </script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
-  </body>
-</html>
+
+dc.renderAll();
