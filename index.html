@@ -24,11 +24,11 @@
 	 <script type="text/javascript" src="js/d3.js"></script>
     <script type="text/javascript" src="js/crossfilter.js"></script>
     <script type="text/javascript" src="js/dc.js"></script>
-    <script type="text/javascript">
+    <script type="text/javascript"></script>
 
 <<<<<<< HEAD
        
-
+<script>
 
 	var exp1 = [
     { Local_Beneficiaries: 167, Afghan_Beneficiaries: 63},
@@ -44,37 +44,9 @@ var exp2 = [
     { CO_formed: 25,VO_formed:65,LSO_ormed:45},
      { CO_formed: 32,VO_formed:54,LSO_ormed:30},
     { CO_formed: 42,VO_formed:54,LSO_ormed:20},		
-=======
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-46399763-1']);
-        _gaq.push(['_trackPageview']);
-	/****************************************************************/
-		function DistrictMapShow(){
-            $('#map2').hide();           
-            $('#map').show();
-            map2_chart.filterAll();
-            dc.redrawAll();
-        }
-        
-        function TehsilMapShow(){
-            $('#map').hide();
-            $('#map2').show();
-        }
-        $('#dashboard').hide();
-        $('#map').hide();
-		
-		
-        var Benefi_chart = dc.pieChart("#Benefi");
-        var Organi_chart = dc.pieChart("#Organi");
-        var map_chart = dc.geoChoroplethChart("#map");
-        var map2_chart = dc.geoChoroplethChart("#map2");
+	];
 
-  d3.csv("data/raha_data.csv", function(csv_data){
-            var cvsdata = crossfilter(csv_data);
-			
->>>>>>> parent of a19391b... cg
-
-
+ 
 // Reshape the data 
 var cfB = new Array();
 exp1.forEach(function (expB) {
@@ -99,12 +71,7 @@ var ndxO = crossfilter(cfO);
 var categoryDimO = ndxO.dimension(function (d) { return d.Category; });
 var valueSumGroupO = categoryDimO.group().reduceSum(function (d) { return d.Value; });
 
- var cf.tcode = cf.dimension(function(d) { return d.TEHSIL_C; });
-		 var tcode = cf.tcode.group();
-		  
-		 var cf.pcode = cf.dimension(function(d) { return d.DISTRICT_C; });
-		 var pcode = cf.pcode.group();     
-          var all = cf.groupAll();
+
 // Create the chart
 
 
@@ -114,57 +81,8 @@ pieChartB.dimension(categoryDim).group(valueSumGroup).radius(60)
 var pieChartO = dc.pieChart("#Organi");
 pieChartO.dimension(categoryDimO).group(valueSumGroupO).radius(60)
 ;
-.group(all);
-                            
-            d3.json("data/Pakl_districs.geojson", function (districsJSON) {
-                
-                map_chart.width(660).height(600)
-                    .dimension(cf.pcode)
-                    .group(pcode)
-                    .colors(['#AAAAAA', '#CB181D'])
-                    .colorDomain([0, 1])
-                    .colorAccessor(function (d) {
-                        if(d>0){
-                            return 1;
-                        } else {
-                            return 0;
-                        }
-                    })
-                    .overlayGeoJson(districsJSON.features, "District", function (d) {
-                        return d.properties.DISTRICT_C;
-                    })
-                    .projection(d3.geo.mercator().center([74.75,33.5]).scale(4500))
-                    .title(function (d) {
-                        return "District: " + pcode2prov[d.key];
-                    });
-                    
-                    d3.json("data/Pakl_tehsil.geojson", function (tehsilJSON){
-                        map2_chart.width(660).height(600)
-                            .dimension(cf.tcode)
-                            .group(tcode)
-                            .colors(['#AAAAAA', '#CB181D'])
-                            .colorDomain([0, 1])
-                            .colorAccessor(function (d) {
-                                if(d>0){
-                                    return 1;
-                                } else {
-                                    return 0;
-                                }
-                            })
-                            .overlayGeoJson(tehsilJSON.features, "Tehsils", function (d) {
-                                return d.properties.TEHSIL_C;
-                            })
-                            .projection(d3.geo.mercator().center([74.75,33.5]).scale(4500))
-                            .title(function (d) {
-                                return "Tehsils: " + tcode2mun[d.key];
-                            });
-                            $('#loading').hide();
-                            $('#dashboard').show();
-                            dc.renderAll();
-                            
-                    });                    
-                });            
-        });
+
+                  
     </script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
   </body>
