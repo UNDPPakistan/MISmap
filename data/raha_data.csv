@@ -1,4 +1,4 @@
-DISTRICT_C,TEHSIL_C,Province,District,Tehsil,Total Expenditure,Male Beneficiaries,Female Beneficiaries,Local Beneficiaries,Afghan Beneficiaries,CO formed,VO formed,LSO formed
+DISTRICT_C,TEHSIL_C,Province,District,Tehsil,Total_Expenditure,Male_Beneficiaries,Female_Beneficiaries,Local_Beneficiaries,Afghan_Beneficiaries,CO_formed,VO_formed,LSO_ormed
 402,40201,FATA                          ,Khyber Agency,Bara,40000,143,45,167,63,31,3,1
 402,40202,FATA                          ,Khyber Agency,Jamrud,35000,210,65,212,78,47,7,1
 402,40203,FATA                          ,Khyber Agency,Landi Kotal,39000,173,68,165,43,51,13,3
