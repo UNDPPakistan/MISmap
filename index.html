@@ -1,8 +1,18 @@
-</head>
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+
+  <head>
+    <title>UNDP Pakistan - RAHA MIS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/dc.css"/>
+    <link rel="stylesheet" type="text/css" href="css/3w-dashboard.css"/>
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="js/data.js"></script>
+  </head>
   <body>
-
-
-
 
            		 <div id="Benefi" class="col-xs-6">
               <h4>Beneficiaries </h4>
@@ -16,6 +26,7 @@
     <script type="text/javascript" src="js/dc.js"></script>
     <script type="text/javascript">
 
+<<<<<<< HEAD
        
 
 
@@ -33,6 +44,35 @@ var exp2 = [
     { CO_formed: 25,VO_formed:65,LSO_ormed:45},
      { CO_formed: 32,VO_formed:54,LSO_ormed:30},
     { CO_formed: 42,VO_formed:54,LSO_ormed:20},		
+=======
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-46399763-1']);
+        _gaq.push(['_trackPageview']);
+	/****************************************************************/
+		function DistrictMapShow(){
+            $('#map2').hide();           
+            $('#map').show();
+            map2_chart.filterAll();
+            dc.redrawAll();
+        }
+        
+        function TehsilMapShow(){
+            $('#map').hide();
+            $('#map2').show();
+        }
+        $('#dashboard').hide();
+        $('#map').hide();
+		
+		
+        var Benefi_chart = dc.pieChart("#Benefi");
+        var Organi_chart = dc.pieChart("#Organi");
+        var map_chart = dc.geoChoroplethChart("#map");
+        var map2_chart = dc.geoChoroplethChart("#map2");
+
+  d3.csv("data/raha_data.csv", function(csv_data){
+            var cvsdata = crossfilter(csv_data);
+			
+>>>>>>> parent of a19391b... cg
 
 
 // Reshape the data 
