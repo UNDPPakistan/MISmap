@@ -121,9 +121,14 @@
                 .colors(['#fd8d3c',
                         '#fc4e2a',
                         '#e31a1c',
-                        ])
-                .colorDomain([0,2])
-                .colorAccessor(function(d, i){return i%3;});
+                        '#bd0026',
+                        '#800026',
+                        '#807dba',
+                        '#6a51a3',
+                        '#54278f',
+                        '#3f007d'])
+                .colorDomain([0,8])
+                .colorAccessor(function(d, i){return i%9;});
             
           
             dc.dataCount("#count-info")
@@ -170,7 +175,7 @@
                             })
                             .projection(d3.geo.mercator().center([71.75,32.5]).scale(4500))
                             .title(function (d) {
-                                return "District: " + Dcode2dist[d.key];
+                                return "District: " + Dcode2mun[d.key];
                             });
                             $('#loading').hide();
                             $('#dashboard').show();
