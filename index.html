@@ -114,21 +114,15 @@
 
             var Dcode = cf.Dcode.group();
             
-            Organi_chart.width(180).height(180)
+            Organi_chart.width(250).height(250)
                 .dimension(cf.Organi)
                 .group(Organi)
                 .innerRadius(30)
                 .colors(['#fd8d3c',
-                        '#fc4e2a',
-                        '#e31a1c',
-                        '#bd0026',
-                        '#800026',
-                        '#807dba',
-                        '#6a51a3',
-                        '#54278f',
+                        '#fc4e2a',                  
                         '#3f007d'])
-                .colorDomain([0,8])
-                .colorAccessor(function(d, i){return i%9;});
+                .colorDomain([0,3])
+                .colorAccessor(function(d, i){return i%4;});
             
           
             dc.dataCount("#count-info")
