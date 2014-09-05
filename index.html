@@ -102,7 +102,7 @@
 
 
            
-            cf.pcode = cf.dimension(function(d) { return d.ProvinceCODE; });
+            cf.pcode = cf.dimension(function(d) { return d.PROVINCE_C; });
             
             cf.Dcode = cf.dimension(function(d) { return d.DISTRICT_C; });
             
@@ -117,7 +117,7 @@
             Organi_chart.width(180).height(180)
                 .dimension(cf.Organi)
                 .group(Organi)
-                .innerRadius(10)
+                .innerRadius(30)
                 .colors(['#fd8d3c',
                         '#fc4e2a',
                         '#e31a1c',

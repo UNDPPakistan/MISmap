@@ -1,4 +1,4 @@
-DISTRICT_C,TEHSIL_C,Province,ProvinceCODE,District,Org_type,Org_ID
+DISTRICT_C,TEHSIL_C,Province,PROVINCE_C,District,Org_type,Org_ID
 402,40201,FATA                          ,4,Khyber Agency,CO,CO1
 402,40201,FATA                          ,4,Khyber Agency,CO,CO2
 402,40201,FATA                          ,4,Khyber Agency,VO,CO3
