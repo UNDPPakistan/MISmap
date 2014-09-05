@@ -130,10 +130,7 @@
                 .colorDomain([0,8])
                 .colorAccessor(function(d, i){return i%9;});
             
-           
-            
-           
-                
+          
             dc.dataCount("#count-info")
 		.dimension(cf)
 		.group(all);
@@ -160,9 +157,9 @@
                         return "Province: " + pcode2prov[d.key];
                     });
                     
-                    d3.json("data/Pak_districs.geojson", function (municJSON){
+                    d3.json("data/Pak_districs.geojson", function (DistrctJSON){
                         map2_chart.width(660).height(600)
-                            .dimension(cf.mcode)
+                            .dimension(cf.Dcode)
                             .group(Dcode)
                             .colors(['#AAAAAA', '#CB181D'])
                             .colorDomain([0, 1])
@@ -173,7 +170,7 @@
                                     return 0;
                                 }
                             })
-                            .overlayGeoJson(municJSON.features, "Districts", function (d) {
+                            .overlayGeoJson(DistrctJSON.features, "Districts", function (d) {
                                 return d.properties.DISTRICT_C;
                             })
                             .projection(d3.geo.mercator().center([71.75,32.5]).scale(4500))
