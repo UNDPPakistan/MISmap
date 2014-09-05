@@ -1,0 +1,98 @@
+DISTRICT_C,TEHSIL_C,Province,ProvinceCODE,District,Org_type,Org_ID
+402,40201,FATA                          ,4,Khyber Agency,CO,CO1
+402,40201,FATA                          ,4,Khyber Agency,CO,CO2
+402,40201,FATA                          ,4,Khyber Agency,VO,CO3
+402,40201,FATA                          ,4,Khyber Agency,LSO,CO4
+402,40201,FATA                          ,4,Khyber Agency,VO,CO5
+402,40202,FATA                          ,4,Khyber Agency,CO ,CO6
+402,40202,FATA                          ,4,Khyber Agency,CO,CO7
+402,40202,FATA                          ,4,Khyber Agency,CO,CO8
+402,40202,FATA                          ,4,Khyber Agency,LSO,CO9
+402,40202,FATA                          ,4,Khyber Agency,VO,CO10
+402,40202,FATA                          ,4,Khyber Agency,VO,CO11
+402,40203,FATA                          ,4,Khyber Agency,VO,CO12
+402,40203,FATA                          ,4,Khyber Agency,CO,CO13
+402,40203,FATA                          ,4,Khyber Agency,CO,CO14
+402,40203,FATA                          ,4,Khyber Agency,VO,CO15
+402,40203,FATA                          ,4,Khyber Agency,LSO,CO16
+402,40203,FATA                          ,4,Khyber Agency,LSO,CO17
+402,40203,FATA                          ,4,Khyber Agency,VO,CO18
+402,40203,FATA                          ,4,Khyber Agency,CO,CO19
+204,20401,KPK                           ,2,Buner,CO,CO20
+204,20401,KPK                           ,2,Buner,CO,CO21
+204,20401,KPK                           ,2,Buner,CO,CO22
+204,20401,KPK                           ,2,Buner,VO,CO23
+204,20401,KPK                           ,2,Buner,CO,CO24
+204,20401,KPK                           ,2,Buner,LSO,CO25
+204,20401,KPK                           ,2,Buner,LSO,CO26
+204,20401,KPK                           ,2,Buner,CO,CO27
+204,20401,KPK                           ,2,Buner,VO,CO28
+204,20402,KPK                           ,2,Buner,CO,CO29
+204,20402,KPK                           ,2,Buner,VO,CO30
+204,20402,KPK                           ,2,Buner,LSO,CO31
+204,20402,KPK                           ,2,Buner,LSO,CO32
+204,20402,KPK                           ,2,Buner,VO,CO33
+204,20402,KPK                           ,2,Buner,CO,CO34
+204,20402,KPK                           ,2,Buner,CO,CO35
+204,20402,KPK                           ,2,Buner,CO,CO36
+204,20403,KPK                           ,2,Buner,CO,CO37
+204,20404,KPK                           ,2,Buner,CO,CO38
+209,20901,KPK                           ,2,Haripur,CO,CO39
+209,20901,KPK                           ,2,Haripur,VO,CO40
+209,20901,KPK                           ,2,Haripur,LSO,CO41
+209,20901,KPK                           ,2,Haripur,LSO,CO42
+209,20901,KPK                           ,2,Haripur,VO,CO43
+209,20901,KPK                           ,2,Haripur,CO,CO44
+209,20901,KPK                           ,2,Haripur,CO,CO45
+209,20902,KPK                           ,2,Haripur,CO,CO46
+221,22101,KPK                           ,2,Swabi,CO,CO47
+221,22101,KPK                           ,2,Swabi,VO,CO48
+221,22101,KPK                           ,2,Swabi,LSO,CO49
+221,22101,KPK                           ,2,Swabi,VO,CO50
+221,22101,KPK                           ,2,Swabi,LSO,CO51
+221,22101,KPK                           ,2,Swabi,VO,CO52
+221,22101,KPK                           ,2,Swabi,CO,CO53
+221,22101,KPK                           ,2,Swabi,CO,CO54
+221,22101,KPK                           ,2,Swabi,CO,CO55
+218,21801,KPK                           ,2,Nowshera,CO,CO56
+218,21802,KPK                           ,2,Nowshera,VO,CO57
+218,21802,KPK                           ,2,Nowshera,LSO,CO58
+218,21802,KPK                           ,2,Nowshera,VO,CO59
+218,21802,KPK                           ,2,Nowshera,VO,CO60
+218,21802,KPK                           ,2,Nowshera,LSO,CO61
+218,21802,KPK                           ,2,Nowshera,CO,CO62
+218,21802,KPK                           ,2,Nowshera,CO,CO63
+218,21802,KPK                           ,2,Nowshera,CO,CO64
+218,21802,KPK                           ,2,Nowshera,CO,CO65
+219,21901,KPK                           ,2,Peshawar,CO,CO66
+219,21901,KPK                           ,2,Peshawar,VO,CO67
+219,21901,KPK                           ,2,Peshawar,LSO,CO68
+219,21901,KPK                           ,2,Peshawar,VO,CO69
+219,21901,KPK                           ,2,Peshawar,VO,CO70
+219,21901,KPK                           ,2,Peshawar,VO,CO71
+219,21901,KPK                           ,2,Peshawar,CO,CO72
+204,20405,KPK                           ,2,Buner,CO,CO73
+204,20405,KPK                           ,2,Buner,VO,CO74
+204,20405,KPK                           ,2,Buner,LSO,CO75
+204,20405,KPK                           ,2,Buner,VO,CO76
+204,20405,KPK                           ,2,Buner,VO,CO77
+204,20405,KPK                           ,2,Buner,CO,CO78
+214,21401,KPK                           ,2,Lower Dir,CO,CO79
+214,21401,KPK                           ,2,Lower Dir,CO,CO80
+214,21401,KPK                           ,2,Lower Dir,VO,CO81
+214,21401,KPK                           ,2,Lower Dir,LSO,CO82
+214,21401,KPK                           ,2,Lower Dir,CO,CO83
+221,22102,KPK                           ,2,Swabi,CO,CO84
+221,22102,KPK                           ,2,Swabi,VO,CO85
+221,22102,KPK                           ,2,Swabi,LSO,CO86
+221,22102,KPK                           ,2,Swabi,CO,CO87
+214,21402,KPK                           ,2,Lower Dir,CO,CO88
+214,21402,KPK                           ,2,Lower Dir,VO,CO89
+214,21402,KPK                           ,2,Lower Dir,CO,CO90
+221,22103,KPK                           ,2,Swabi,CO,CO91
+221,22103,KPK                           ,2,Swabi,CO,CO92
+221,22103,KPK                           ,2,Swabi,CO,CO93
+204,20406,KPK                           ,2,Buner,CO,CO94
+204,20406,KPK                           ,2,Buner,VO,CO95
+204,20406,KPK                           ,2,Buner,LSO,CO96
+204,20406,KPK                           ,2,Buner,CO,CO97
