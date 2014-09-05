@@ -106,7 +106,7 @@
             
             cf.Dcode = cf.dimension(function(d) { return d.DISTRICT_C; });
             
-            var Organi = cf.sector.group();
+            var Organi = cf.Organi.group();
            
             var pcode = cf.pcode.group();
            
@@ -178,7 +178,7 @@
                             })
                             .projection(d3.geo.mercator().center([74.75,33.5]).scale(4500))
                             .title(function (d) {
-                                return "District: " + mcode2mun[d.key];
+                                return "District: " + Dcode2mun[d.key];
                             });
                             $('#loading').hide();
                             $('#dashboard').show();
