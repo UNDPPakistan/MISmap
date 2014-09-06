@@ -174,8 +174,7 @@
                                 return d.properties.DISTRICT_C;
                             })
                             .projection(d3.geo.mercator().center([74.75,33.5]).scale(4500))
-                            .title(function (d) {
-                                return "Districts: " + dcode2dist[d.key];
+                            .title(function (d) {return "Districts: " + dcode2dist[d.key];
                             });
                             $('#loading').hide();
                             $('#dashboard').show();
