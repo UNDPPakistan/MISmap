@@ -49,7 +49,9 @@
 
           <h3>Areas of Interventions </h3><p><a href="javascript:DistrictMapShow();">District</a> - Province</p>
         </div>
-                   
+        <div id="map2" class="col-lg-8">
+          <h3>Areas of Interventions </h3><p>District - <a href="javascript:provincesMapShow();">Province</a></p>
+        </div>            
       </div>
       Created by Asela Bandara  
     </div>
@@ -91,7 +93,7 @@
         
         var map_chart = dc.geoChoroplethChart("#map");
         
-      
+        var map2_chart = dc.geoChoroplethChart("#map2");
         
         d3.csv("data/raha_CO.csv", function(csv_data){
             var cf = crossfilter(csv_data);
@@ -100,7 +102,7 @@
 
 
            
-          
+            cf.pcode = cf.dimension(function(d) { return d.PROVINCE_Co; });
             
             cf.Dcode = cf.dimension(function(d) { return d.DISTRICT_Co; });
             
@@ -133,9 +135,29 @@
 		.dimension(cf)
 		.group(all);
                             
-           
+            d3.json("data/Pak_Province.geojson", function (provincesJSON) {
+                
+                map_chart.width(460).height(460)
+                    .dimension(cf.pcode)
+                    .group(pcode)
+                    .colors(['#AAAAAA', '#CB181D'])
+                    .colorDomain([0, 1])
+                    .colorAccessor(function (d) {
+                        if(d>0){
+                            return 1;
+                        } else {
+                            return 0;
+                        }
+                    })
+                    .overlayGeoJson(provincesJSON.features, "Province", function (d) {
+                        return d.properties.PROVINCE_C;
+                    })
+                    .projection(d3.geo.mercator().center([74.75,33.5]).scale(4500))
+                    .title(function (d) {
+                        return "Province: " + pcode2prov[d.key];
+                    });
                     
-                    d3.json("data/pak_districts.json", function (DistrctJSON){
+                    d3.json("data/Pak_districs.geojson", function (DistrctJSON){
                         map2_chart.width(460).height(460)
                             .dimension(cf.Dcode)
                             .group(Dcode)
@@ -149,7 +171,7 @@
                                 }
                             })
                             .overlayGeoJson(DistrctJSON.features, "Districts", function (d) {
-                                return d.properties.DIST_C_STR;
+                                return d.properties.DISTRICT_C;
                             })
                             .projection(d3.geo.mercator().center([74.75,33.5]).scale(4500))
                             .title(function (d) {return "Districts: " + dcode2dist[d.key];
