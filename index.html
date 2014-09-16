@@ -99,26 +99,24 @@
         d3.csv("data/raha_CO.csv", function(csv_data){
             var cf = crossfilter(csv_data);
             
-            cfOrgani = cf.dimension(function(d) { return d.Org_type; });
+            cf.Organi = cf.dimension(function(d) { return d.Org_type; });
 
-
-           
-            cfpcode = cf.dimension(function(d) { return d.PROVINCE_Co; });
+            cf.pcode = cf.dimension(function(d) { return d.PROVINCE_Co; });
             
-            cfDcode = cf.dimension(function(d) { return d.DISTRICT_Co; });
+            cf.Dcode = cf.dimension(function(d) { return d.DISTRICT_Co; });
             
-            var Organi = cfOrgani.group();
+            var Organi = cf.Organi.group();
            
-            var pcode = cfpcode.group();
+            var pcode = cf.pcode.group();
 
-           var Dcode = cfDcode.group();
+           var Dcode = cf.Dcode.group();
 
             var all = cf.groupAll();
 
             
             
             Organi_chart.width(250).height(250)
-                .dimension(cfOrgani)
+                .dimension(cf.Organi)
                 .group(Organi)
                 .innerRadius(30)
                 .colors(['#fd8d3c',
@@ -141,7 +139,7 @@
             d3.json("data/Pak_Province.geojson", function (provincesJSON) {
                 
                 map_chart.width(460).height(460)
-                    .dimension(cfpcode)
+                    .dimension(cf.pcode)
                     .group(pcode)
                     .colors(['#AAAAAA', '#CB181D'])
                     .colorDomain([0, 1])
@@ -162,7 +160,7 @@
                     
                     d3.json("data/Pak_districs.geojson", function (DistrctJSON){
                         map2_chart.width(460).height(460)
-                            .dimension(cfDcode)
+                            .dimension(cf.Dcode)
                             .group(Dcode)
                             .colors(['#AAAAAA', '#CB181D'])
                             .colorDomain([0, 1])
@@ -177,15 +175,14 @@
                                 return d.properties.DISTRICT_C;
                             })
                             .projection(d3.geo.mercator().center([72.52, 34.15]).scale(4500))
-                            .title(function (d) {return "Districts: " + dcode2dist[d.key];
-                            });
+                            .title(function (d) {return "Districts: " + dcode2dist[d.key]; });
                             $('#loading').hide();
                             $('#dashboard').show();
                             dc.renderAll();
                             
                     });                    
                 });            
-        });
+      
     </script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
   </body>
