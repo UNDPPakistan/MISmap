@@ -89,6 +89,7 @@
 
         $('#dashboard').hide();
         $('#map').hide();
+
         var Organi_chart = dc.pieChart("#Organi");
         
         var map_chart = dc.geoChoroplethChart("#map");
@@ -157,7 +158,7 @@
                         return "Province: " + pcode2prov[d.key];
                     });
                     
-                    d3.json("data/Pak_districs.geojson", function (DistrctJSON){
+                    d3.json("pak_districts.json", function (DistrctJSON){
                         map2_chart.width(460).height(460)
                             .dimension(cf.Dcode)
                             .group(Dcode)
@@ -171,7 +172,7 @@
                                 }
                             })
                             .overlayGeoJson(DistrctJSON.features, "Districts", function (d) {
-                                return d.properties.DISTRICT_C;
+                                return d.properties.DIST_C_STR;
                             })
                             .projection(d3.geo.mercator().center([74.75,33.5]).scale(4500))
                             .title(function (d) {return "Districts: " + dcode2dist[d.key];
