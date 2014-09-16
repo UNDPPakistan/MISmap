@@ -102,17 +102,19 @@
 
 
            
-            cf.pcode = cf.dimension(function(d) { return d.PROVINCE_C; });
+            cf.pcode = cf.dimension(function(d) { return d.PROVINCE_Co; });
             
-            cf.Dcode = cf.dimension(function(d) { return d.DISTRICT_C; });
+            cf.Dcode = cf.dimension(function(d) { return d.DISTRICT_Co; });
             
             var Organi = cf.Organi.group();
            
             var pcode = cf.pcode.group();
-           
+
+           var Dcode = cf.Dcode.group();
+
             var all = cf.groupAll();
 
-            var Dcode = cf.Dcode.group();
+            
             
             Organi_chart.width(250).height(250)
                 .dimension(cf.Organi)
@@ -152,7 +154,7 @@
                     .overlayGeoJson(provincesJSON.features, "Province", function (d) {
                         return d.properties.PROVINCE_C;
                     })
-                    .projection(d3.geo.mercator().center([74.75,33.5]).scale(4500))
+                    .projection(d3.geo.mercator().center([72.52, 34.15]).scale(4500))
                     .title(function (d) {
                         return "Province: " + pcode2prov[d.key];
                     });
@@ -173,7 +175,7 @@
                             .overlayGeoJson(DistrctJSON.features, "Districts", function (d) {
                                 return d.properties.DISTRICT_C;
                             })
-                            .projection(d3.geo.mercator().center([74.75,33.5]).scale(4500))
+                            .projection(d3.geo.mercator().center([72.52, 34.15]).scale(4500))
                             .title(function (d) {return "Districts: " + dcode2dist[d.key];
                             });
                             $('#loading').hide();
