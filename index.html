@@ -136,7 +136,7 @@
                         }
                     })
                     .overlayGeoJson(provincesJSON.features, "Province", function (d) {
-                        return d.properties.PROVINCE_C;
+                        return d.properties.Prov_C_SRT;
                     })
                     .projection(d3.geo.mercator().center([72.52, 34.15]).scale(4500))
                     .title(function (d) {
@@ -158,7 +158,7 @@
                             })
                             .overlayGeoJson(DistrctJSON.features, "Districts", 
 							function (d) {
-                                return d.properties.DISTRICT_C;
+                                return d.properties.Dist_C_SRT;
                             })
                             .projection(d3.geo.mercator().center([72.52, 34.15]).scale(4500))
                             .title(function (d) {return "Districts: " + dcode2dist[d.key]; });
