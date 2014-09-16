@@ -49,9 +49,7 @@
 
           <h3>Areas of Interventions </h3><p><a href="javascript:DistrictMapShow();">District</a> - Province</p>
         </div>
-
         <div id="map2" class="col-lg-8">
-
           <h3>Areas of Interventions </h3><p>District - <a href="javascript:provincesMapShow();">Province</a></p>
         </div>            
       </div>
@@ -89,7 +87,8 @@
             $('#map2').show();
         }
 
-       
+        $('#dashboard').hide();
+        $('#map').hide();
         var Organi_chart = dc.pieChart("#Organi");
         
         var map_chart = dc.geoChoroplethChart("#map");
@@ -171,8 +170,9 @@
                                     return 0;
                                 }
                             })
-                            .overlayGeoJson(DistrctJSON.features, "Districts", 
-        function (d) { return d.properties.DISTRICT_C;})
+                            .overlayGeoJson(DistrctJSON.features, "Districts", function (d) {
+                                return d.properties.DISTRICT_C;
+                            })
                             .projection(d3.geo.mercator().center([74.75,33.5]).scale(4500))
                             .title(function (d) {return "Districts: " + dcode2dist[d.key];
                             });
