@@ -89,6 +89,7 @@
 
         $('#dashboard').hide();
         $('#map').hide();
+
         var Organi_chart = dc.pieChart("#Organi");
         
         var map_chart = dc.geoChoroplethChart("#map");
@@ -98,26 +99,26 @@
         d3.csv("data/raha_CO.csv", function(csv_data){
             var cf = crossfilter(csv_data);
             
-            cf.Organi = cf.dimension(function(d) { return d.Org_type; });
+            cfOrgani = cf.dimension(function(d) { return d.Org_type; });
 
 
            
-            cf.pcode = cf.dimension(function(d) { return d.PROVINCE_Co; });
+            cfpcode = cf.dimension(function(d) { return d.PROVINCE_Co; });
             
-            cf.Dcode = cf.dimension(function(d) { return d.DISTRICT_Co; });
+            cfDcode = cf.dimension(function(d) { return d.DISTRICT_Co; });
             
-            var Organi = cf.Organi.group();
+            var Organi = cfOrgani.group();
            
-            var pcode = cf.pcode.group();
+            var pcode = cfpcode.group();
 
-           var Dcode = cf.Dcode.group();
+           var Dcode = cfDcode.group();
 
             var all = cf.groupAll();
 
             
             
             Organi_chart.width(250).height(250)
-                .dimension(cf.Organi)
+                .dimension(cfOrgani)
                 .group(Organi)
                 .innerRadius(30)
                 .colors(['#fd8d3c',
@@ -140,7 +141,7 @@
             d3.json("data/Pak_Province.geojson", function (provincesJSON) {
                 
                 map_chart.width(460).height(460)
-                    .dimension(cf.pcode)
+                    .dimension(cfpcode)
                     .group(pcode)
                     .colors(['#AAAAAA', '#CB181D'])
                     .colorDomain([0, 1])
@@ -161,7 +162,7 @@
                     
                     d3.json("data/Pak_districs.geojson", function (DistrctJSON){
                         map2_chart.width(460).height(460)
-                            .dimension(cf.Dcode)
+                            .dimension(cfDcode)
                             .group(Dcode)
                             .colors(['#AAAAAA', '#CB181D'])
                             .colorDomain([0, 1])
